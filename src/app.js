@@ -5,14 +5,11 @@ const authRoutes = require("./routes/auth.route.js");
 const blogRoutes = require('./routes/blog.route.js');
 const commentRoutes = require('./routes/comment.route.js');
 
-
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-
-// Logging middleware
 app.use((req, res, next) => {
   logger.info(`Request Method -->>> ${req.method}. Request URL -->>> ${req.url}`);
   next();
